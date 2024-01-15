@@ -74,11 +74,12 @@ public class LinxoService {
 
     public Object authorizeAccount(AccountAuthorizationRequest request) {
         try {
-
+            return restCall.post(request, authAccountUrl, new HttpHeaders(), Object.class);
         }catch (Exception e){
             e.printStackTrace();
             log.debug(String.format("Account Auth exception %s >> %s", e.getMessage(), e.getLocalizedMessage()));
             log.debug(Arrays.toString(e.getStackTrace()));
         }
+        return null;
     }
 }
