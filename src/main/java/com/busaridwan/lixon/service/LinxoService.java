@@ -45,6 +45,8 @@ public class LinxoService {
             requestHeaders.set(xforward, request.getRequestId());
             HttpEntity<LinxoPaymentOrderRequest> entity = new HttpEntity<>(orderRequest, requestHeaders);
 
+//            Response apiResponse = restCall.post(orderRequest, payUrl, requestHeaders, LinxoDepositResponse.class);
+//            response = (LinxoDepositResponse) apiResponse.getData();
             response = (LinxoDepositResponse) restCall.postForObject(payUrl, entity, LinxoDepositResponse.class);
 
         }catch (Exception e){
