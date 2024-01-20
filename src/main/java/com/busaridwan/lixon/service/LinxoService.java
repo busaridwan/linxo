@@ -45,14 +45,11 @@ public class LinxoService {
             requestHeaders.set(xforward, request.getRequestId());
             HttpEntity<LinxoPaymentOrderRequest> entity = new HttpEntity<>(orderRequest, requestHeaders);
 
-//            Response apiResponse = restCall.post(orderRequest, payUrl, requestHeaders, LinxoDepositResponse.class);
-//            response = (LinxoDepositResponse) apiResponse.getData();
             response = (LinxoDepositResponse) restCall.postForObject(payUrl, entity, LinxoDepositResponse.class);
 
         }catch (Exception e){
             e.printStackTrace();
             log.debug(String.format("Deposit exception %s >> %s", e.getMessage(), e.getLocalizedMessage()));
-            log.debug(Arrays.toString(e.getStackTrace()));
         }
         return response;
     }
@@ -69,7 +66,6 @@ public class LinxoService {
         }catch (Exception e){
             e.printStackTrace();
             log.debug(String.format("Status exception %s >> %s", e.getMessage(), e.getLocalizedMessage()));
-            log.debug(Arrays.toString(e.getStackTrace()));
         }
         return response;
     }
@@ -82,7 +78,6 @@ public class LinxoService {
         }catch (Exception e){
             e.printStackTrace();
             log.debug(String.format("Account Auth exception %s >> %s", e.getMessage(), e.getLocalizedMessage()));
-            log.debug(Arrays.toString(e.getStackTrace()));
         }
         return response;
     }

@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.busaridwan.lixon.util;
-
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -13,7 +7,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 /**
  * @author busaridwan
@@ -33,7 +26,6 @@ public class JsonConverter {
                 jsonString = jsonMapper.findAndRegisterModules().writeValueAsString(obj);
             }
         } catch (JsonProcessingException e) {
-            // TODO Auto-generated catch block
             // e.printStackTrace();
             logger.error("error converting object to json", e);
         }
