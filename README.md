@@ -28,6 +28,7 @@ This is to whitelist the company account.
 ```
 
 ### 1. Bearer Token
+This is to generate a JWToken 
 
 `Request`
 
