@@ -47,6 +47,7 @@ This is to generate a JWToken
 ```
 
 ### 2. Transaction Payment
+This is the payment enddpoint - returns a url whihc is display in an iframe/webview for customer to interact with.
 
 `POST` : `http://localhost:8080/linxo/pay`
 
