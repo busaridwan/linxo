@@ -71,6 +71,33 @@ The request sent to Oxlin actually contains a redirect url and notification url 
   ]
 }
 ```
+`Response`
+```
+{
+  "id": "9e987685-b26d-49a5-8da7-dade28d3512b",
+  "instant_payment": "NO",
+  "selected_capability": "SINGLE_PAYMENT",
+  "order_status": "NEW",
+  "creation_date": "2024-01-28T21:23:17.103740081Z",
+  "auth_url": "https://pay.oxlin.io/v1/authorize/9e987685-b26d-49a5-8da7-dade28d3512b?client_id=AfayYCuuKnGI_A1Q_3VeCWkCUysa",
+  "redirect_url": "https://developers.oxlin.io/docs/direct-payment-api-quickstart#tag/Authorized-Accounts/operation/deleteAuthorizedAccounts",
+  "instructions": [
+    {
+      "amount": "1.42",
+      "currency": "EUR",
+      "beneficiary": {
+        "schema": "SEPA",
+        "iban": "FR8530003000307599775722N09",
+        "name": "Arthur Dent",
+        "bic": "SOGEFRPPXXX",
+        "country": "FR"
+      },
+      "label": "My Linxo Connect Payment Test"
+    }
+  ],
+  "payer_time_zone": "Europe/Paris"
+}
+```
 
 ### 3. Check Transaction Status
 I have made this a `POST` request based on my FrontEnd request. You can make this a `GET` request with `orderId` as the request parameter.
